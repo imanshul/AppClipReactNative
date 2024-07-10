@@ -9,7 +9,10 @@
     "start": "react-native start",
     "test": "jest",
     "build-android-test": "cd android && ./gradlew app:assembleRelease && cd ..",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "bundle-main": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "bundle-instant": "react-native bundle --platform android --dev false --entry-file index.instant.js --bundle-output android/instantApp/src/main/assets/index.instant.bundle --assets-dest android/instantApp/src/main/res",
+    "bundle-all": "yarn run bundle-main && yarn run bundle-instant"
   },
   "dependencies": {
     "patch-package": "^8.0.0",
