@@ -33,6 +33,8 @@ local.properties
 .cxx/
 *.keystore
 !debug.keystore
+android/testing_locally
+android/local_app.apks
 
 # node.js
 #
